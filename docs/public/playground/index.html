@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0e14">
+  <title>Playground — DevHub</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0b0e14;
+      --panel: #111620;
+      --panel2: #151b27;
+      --line: #222a38;
+      --text: #eef2fa;
+      --muted: #8d98ab;
+      --accent: #7c6cff;
+      --cyan: #54d6e8;
+      --green: #4fd1a5;
+      --amber: #f4b860;
+      --red: #ff7885;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--panel);
+    }
+    header a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.15s;
+    }
+    header a:hover { color: var(--text); }
+    header .title {
+      font-weight: 600;
+      font-size: 15px;
+    }
+    header .title span { color: var(--accent); }
+    main {
+      flex: 1;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 1600px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; padding: 12px; gap: 12px; }
+    }
+    .editor, .console {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 400px;
+    }
+    .panel-header {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      background: var(--panel2);
+    }
+    .panel-header .actions { display: flex; gap: 8px; }
+    button {
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--line);
+      padding: 7px 12px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+    button:hover { border-color: var(--accent); color: var(--accent); }
+    button.primary {
+      background: linear-gradient(135deg, #8172ff, #6655e5);
+      border-color: transparent;
+      color: white;
+    }
+    button.primary:hover { filter: brightness(1.1); color: white; }
+    textarea {
+      flex: 1;
+      width: 100%;
+      background: #0d1118;
+      color: var(--text);
+      border: none;
+      padding: 14px;
+      font-family: 'SF Mono', Monaco, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      resize: none;
+      outline: none;
+      min-height: 350px;
+    }
+    .console-output {
+      flex: 1;
+      padding: 14px;
+      font-family: 'SF Mono', Monaco, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-y: auto;
+      max-height: 600px;
+    }
+    .log-line {
+      padding: 5px 0;
+      white-space: pre-wrap;
+      word-break: break-all;
+      border-bottom: 1px solid #1a2030;
+    }
+    .log-line.log { color: var(--text); }
+    .log-line.error { color: var(--red); }
+    .log-line.warn { color: var(--amber); }
+    .log-line.info { color: var(--cyan); }
+    .log-line.success { color: var(--green); }
+    .log-line::before { content: '› '; color: var(--muted); }
+    .empty { color: var(--muted); font-style: italic; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../">← DevHub</a>
+    <div class="title">🚀 <span>Playground</span> JavaScript</div>
+  </header>
+  <main>
+    <div class="editor">
+      <div class="panel-header">
+        <span>Code JavaScript</span>
+        <div class="actions">
+          <button id="clear-code">Effacer</button>
+        </div>
+      </div>
+      <textarea id="code" spellcheck="false">// Écrivez votre code ici
+// Astuce : Ctrl + Entrée pour exécuter
+
+console.log("👋 Bonjour DevHub !");
+
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((a, b) => a + b, 0);
+console.log("Somme :", sum);
+
+const user = { name: "Cianney", role: "Developer" };
+console.log(user);
+</textarea>
+    </div>
+    <div class="console">
+      <div class="panel-header">
+        <span>Console</span>
+        <div class="actions">
+          <button id="clear-console">Effacer</button>
+          <button id="run" class="primary">▶ Exécuter</button>
+        </div>
+      </div>
+      <div class="console-output" id="output">
+        <div class="empty">En attente d'exécution...</div>
+      </div>
+    </div>
+  </main>
+  <script>
+    const codeEl = document.getElementById('code');
+    const outputEl = document.getElementById('output');
+    const saved = localStorage.getItem('devhub_playground_code');
+    if (saved) codeEl.value = saved;
+    codeEl.addEventListener('input', () => {
+      localStorage.setItem('devhub_playground_code', codeEl.value);
+    });
+    function addLine(type, text) {
+      const line = document.createElement('div');
+      line.className = `log-line ${type}`;
+      line.textContent = text;
+      outputEl.appendChild(line);
+    }
+    function clearOutput() { outputEl.innerHTML = ''; }
+    function formatArg(arg) {
+      if (typeof arg === 'object' && arg !== null) {
+        try { return JSON.stringify(arg, null, 2); }
+        catch { return String(arg); }
+      }
+      return String(arg);
+    }
+    function run() {
+      clearOutput();
+      const oL = console.log, oE = console.error, oW = console.warn, oI = console.info;
+      console.log = (...a) => addLine('log', a.map(formatArg).join(' '));
+      console.error = (...a) => addLine('error', a.map(formatArg).join(' '));
+      console.warn = (...a) => addLine('warn', a.map(formatArg).join(' '));
+      console.info = (...a) => addLine('info', a.map(formatArg).join(' '));
+      try {
+        const result = new Function(codeEl.value)();
+        if (result !== undefined) addLine('success', 'Résultat : ' + formatArg(result));
+      } catch (err) {
+        addLine('error', err.name + ': ' + err.message);
+      } finally {
+        console.log = oL; console.error = oE; console.warn = oW; console.info = oI;
+      }
+    }
+    document.getElementById('run').onclick = run;
+    document.getElementById('clear-console').onclick = clearOutput;
+    document.getElementById('clear-code').onclick = () => {
+      if (confirm('Effacer le code ?')) {
+        codeEl.value = '';
+        localStorage.removeItem('devhub_playground_code');
+      }
+    };
+    codeEl.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); run(); }
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        const start = codeEl.selectionStart, end = codeEl.selectionEnd;
+        codeEl.value = codeEl.value.substring(0, start) + '  ' + codeEl.value.substring(end);
+        codeEl.selectionStart = codeEl.selectionEnd = start + 2;
+      }
+    });
+  </script>
+</body>
+</html>
