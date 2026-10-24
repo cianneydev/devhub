@@ -12,21 +12,38 @@ export default defineConfig({
 
   ignoreDeadLinks: true,
 
-  // ✅ Balise canonique et vérification Google mises à jour
   head: [
+    // Balise canonique pour le SEO
     ['link', { rel: 'canonical', href: 'https://cianneydev.github.io/devhub/' }],
-    ['meta', { name: 'google-site-verification', content: 'B0jPipYXxtLdEwcxLnoEd1IOGEAhoHw_V9UACXFrew' }]
+    
+    // Vérification Google Search Console
+    ['meta', { name: 'google-site-verification', content: 'B0jPipYXxtLdEwcxLnoEd1IOGEAhoHw_V9UACXFrew' }],
+    
+    // ✅ Script pour restaurer l'URL après un 404 sur GitHub Pages
+    [
+      'script',
+      {},
+      `
+        (function() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const redirect = urlParams.get('redirect');
+          if (redirect) {
+            window.history.replaceState({}, '', redirect);
+          }
+        })();
+      `
+    ]
   ],
 
   themeConfig: {
     logo: '/logo.png',
 
     nav: [
-  { text: 'Accueil', link: '/' },
-  { text: 'Guide', link: '/guide/getting-started' },
-  { text: 'Playground', link: '/playground/' },
-  { text: 'GitHub', link: 'https://github.com/cianneydev/devhub' },
-],
+      { text: 'Accueil', link: '/' },
+      { text: 'Guide', link: '/guide/getting-started' },
+      { text: 'Playground', link: '/playground/' },
+      { text: 'GitHub', link: 'https://github.com/cianneydev/devhub' },
+    ],
 
     sidebar: [
       {
