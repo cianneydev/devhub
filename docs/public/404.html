@@ -2,9 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DevHub</title>
+    <title>DevHub - Redirection</title>
     <script>
-      window.location.href = '/devhub/';
+      // On récupère le chemin (ex: /devhub/guide/snippets)
+      var path = window.location.pathname;
+      // On redirige vers l'accueil en passant le chemin en paramètre
+      window.location.replace('/devhub/?redirect=' + encodeURIComponent(path));
     </script>
   </head>
   <body></body>
