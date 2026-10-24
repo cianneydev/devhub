@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cianneydev.github.io/DevHub/sitemap.xml
+Sitemap: https://cianneydev.github.io/devhub/sitemap.xml
