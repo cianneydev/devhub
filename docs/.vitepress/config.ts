@@ -22,10 +22,11 @@ export default defineConfig({
     logo: '/logo.png',
 
     nav: [
-      { text: 'Accueil', link: '/' },
-      { text: 'Guide', link: '/guide/getting-started' },
-      { text: 'GitHub', link: 'https://github.com/cianneydev/devhub' },
-    ],
+  { text: 'Accueil', link: '/' },
+  { text: 'Guide', link: '/guide/getting-started' },
+  { text: 'Playground', link: '/playground/' },
+  { text: 'GitHub', link: 'https://github.com/cianneydev/devhub' },
+],
 
     sidebar: [
       {
