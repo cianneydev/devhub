@@ -1,5 +1,5 @@
 {
-  "name": "devhub-cli-cianneydev",
+  "name": "devhub - github",
   "version": "0.7.1",
   "description": "Le hub central du développeur moderne — CLI tout-en-un",
   "type": "module",
@@ -38,12 +38,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cianneydev/DevHub.git"
+    "url": "https://github.com/cianneydev/devhub.git"
   },
   "bugs": {
-    "url": "https://github.com/cianneydev/DevHub/issues"
+    "url": "https://github.com/cianneydev/devhub/issues"
   },
-  "homepage": "https://github.com/cianneydev/DevHub#readme",
+  "homepage": "https://github.com/cianneydev/devhub#readme",
   "engines": {
     "node": ">=20"
   },
