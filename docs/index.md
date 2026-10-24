@@ -11,7 +11,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: Voir sur GitHub
-      link: https://github.com/cianneydev/DevHub
+      link: https://github.com/cianneydev/devhub
 
 features:
   - icon: 📝
