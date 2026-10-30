@@ -1,6 +1,6 @@
 # 🚀 Démarrage rapide
 
-Bienvenue dans **DevHub-** ! Ce guide vous montre comment l'installer et l'utiliser en 2 minutes.
+Bienvenue dans **DevHub** ! Ce guide vous montre comment l'installer et l'utiliser en 2 minutes.
 
 ## 📦 Prérequis
 
