@@ -17,6 +17,9 @@ features:
   - icon: 📝
     title: Snippets
     details: Sauvegardez et retrouvez vos bouts de code en un instant.
+  - icon: 📋
+    title: Copier
+    details: Copiez un snippet dans le presse-papiers en une commande.
   - icon: 📓
     title: Notes
     details: Prenez des notes rapides sans quitter le terminal.
@@ -28,8 +31,5 @@ features:
     details: Vos données sont stockées dans ~/.devhub, jamais dans le cloud.
   - icon: ⚡
     title: Ultra léger
-    details: Uniquement 4 dépendances. Pas de bloatware.
-  - icon: 🌍
-    title: Open Source
-    details: Licence MIT. Contributions bienvenues.
+    details: Uniquement 5 dépendances. Pas de bloatware.
 ---
