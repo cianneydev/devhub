@@ -7,6 +7,7 @@ import { registerStatsCommand } from './commands/stats.js';
 import { registerExportCommand } from './commands/export.js';
 import { registerImportCommand } from './commands/import.js';
 import { registerCopyCommand } from './commands/copy.js';
+import { registerProjectCommands } from './commands/project.js';
 import { registerUiCommand } from './commands/ui.js';
 
 const program = new Command();
@@ -14,7 +15,7 @@ const program = new Command();
 program
   .name('devhub')
   .description('Le hub central du développeur moderne — CLI tout-en-un')
-  .version('0.7.0');
+  .version('0.8.0');
 
 registerSnippetCommands(program);
 registerSearchCommand(program);
@@ -23,6 +24,7 @@ registerStatsCommand(program);
 registerExportCommand(program);
 registerImportCommand(program);
 registerCopyCommand(program);
+registerProjectCommands(program);
 registerUiCommand(program);
 
 program.parse(process.argv);
