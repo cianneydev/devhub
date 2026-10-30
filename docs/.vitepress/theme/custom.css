@@ -24,6 +24,11 @@
    PAGE D'ACCUEIL - HERO
    ============================================ */
 
+/* Masque le logo géant dans le Hero pour éviter le chevauchement */
+.VPHero .image {
+  display: none !important;
+}
+
 .VPHero .name {
   font-size: 3.5rem !important;
   line-height: 1.1 !important;
