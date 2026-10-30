@@ -5,9 +5,7 @@ export default defineConfig({
   description: 'Le hub central du développeur moderne — CLI tout-en-un',
 
   base: '/devhub/',
-
   cleanUrls: false,
-
   ignoreDeadLinks: true,
 
   head: [
@@ -34,6 +32,8 @@ export default defineConfig({
     nav: [
       { text: 'Accueil', link: '/' },
       { text: 'Guide', link: '/guide/getting-started' },
+      { text: 'Roadmap', link: '/guide/roadmap' },
+      { text: 'DevHub Web (bientôt)', link: '#' },
       { text: 'GitHub', link: 'https://github.com/cianneydev/devhub' },
     ],
 
@@ -42,6 +42,7 @@ export default defineConfig({
         text: '🚀 Démarrage',
         items: [
           { text: '📥 Installation', link: '/guide/getting-started' },
+          { text: '🗺️ Roadmap', link: '/guide/roadmap' },
         ],
       },
       {
