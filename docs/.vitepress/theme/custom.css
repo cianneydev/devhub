@@ -1,5 +1,5 @@
 /* ============================================
-   DEVHUB - Custom Theme
+   DEVHUB - Custom Theme (Dark & Light mode)
    ============================================ */
 
 /* Logo rond et propre */
@@ -21,18 +21,18 @@
 }
 
 /* ============================================
-   PAGE D'ACCUEIL - HERO
+   PAGE D'ACCUEIL - HERO (Cacher le logo géant)
    ============================================ */
-
-/* Masque le logo géant dans le Hero pour éviter le chevauchement */
-.VPHero .image {
+.VPHero .image,
+.VPHero .image-bg,
+.VPHero .image-container {
   display: none !important;
 }
 
 .VPHero .name {
   font-size: 3.5rem !important;
   line-height: 1.1 !important;
-  background: linear-gradient(90deg, #a5b4fc, #818cf8, #67e8f9);
+  background: linear-gradient(90deg, #8172ff, #6655e5, #54d6e8);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,23 +45,22 @@
 
 .VPHero .tagline {
   font-size: 1.1rem !important;
-  color: #9ca8c3 !important;
+  opacity: 0.8;
 }
 
 /* ============================================
-   CARTES DE FONCTIONNALITÉS
+   CARTES DE FONCTIONNALITÉS (Compatible clair/sombre)
    ============================================ */
-
 .VPFeatures .items .item {
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: var(--vp-c-bg-soft) !important;
+  border: 1px solid var(--vp-c-divider) !important;
   border-radius: 16px !important;
   padding: 24px !important;
   transition: all 0.25s ease !important;
 }
 
 .VPFeatures .items .item:hover {
-  border-color: rgba(129, 140, 248, 0.5) !important;
+  border-color: var(--vp-c-brand-1) !important;
   transform: translateY(-4px) !important;
   box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15) !important;
 }
@@ -74,30 +73,24 @@
 .VPFeatures .items .item .title {
   font-size: 1.1rem !important;
   font-weight: 700 !important;
-  color: #eef2fa !important;
 }
 
 .VPFeatures .items .item .details {
   font-size: 0.9rem !important;
-  color: #9ca8c3 !important;
   line-height: 1.7 !important;
+  opacity: 0.8;
   margin-top: 8px !important;
 }
 
 /* ============================================
    SIDEBAR AMÉLIORÉE
    ============================================ */
-
-.VPSidebar {
-  background: #0b1020 !important;
-}
-
 .VPSidebarItem.level-0 > .item > .text {
   font-size: 0.75rem !important;
   font-weight: 800 !important;
   letter-spacing: 1.2px !important;
   text-transform: uppercase !important;
-  color: #818cf8 !important;
+  color: var(--vp-c-brand-1) !important;
   margin-bottom: 4px !important;
 }
 
@@ -108,29 +101,27 @@
 }
 
 .VPSidebarItem.level-1 > .item:hover {
-  background: rgba(129, 140, 248, 0.1) !important;
+  background: var(--vp-c-brand-soft) !important;
 }
 
 .VPSidebarItem.level-1 > .item > .link > .text {
   font-size: 0.9rem !important;
-  color: #c7d2fe !important;
   font-weight: 500 !important;
 }
 
 .VPSidebarItem.is-active > .item {
-  background: rgba(129, 140, 248, 0.15) !important;
-  border-left: 3px solid #818cf8 !important;
+  background: var(--vp-c-brand-soft) !important;
+  border-left: 3px solid var(--vp-c-brand-1) !important;
 }
 
 .VPSidebarItem.is-active > .item > .link > .text {
-  color: #a5b4fc !important;
   font-weight: 700 !important;
+  color: var(--vp-c-brand-1) !important;
 }
 
 /* ============================================
    BOUTONS
    ============================================ */
-
 .VPButton.brand {
   background: linear-gradient(135deg, #8172ff, #6655e5) !important;
   border: 1px solid #8e82ff !important;
@@ -143,25 +134,13 @@
   transform: translateY(-2px) !important;
 }
 
-.VPButton.alt {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  color: #e2e8f0 !important;
-}
-
 /* ============================================
    MOBILE
    ============================================ */
-
 @media (max-width: 768px) {
   .VPNavBarTitle .logo {
     width: 30px !important;
     height: 30px !important;
-    min-width: 30px !important;
-  }
-
-  .VPNavBarTitle .title {
-    font-size: 1.1rem !important;
   }
 
   .VPHero .name {
@@ -170,15 +149,6 @@
 
   .VPHero .text {
     font-size: 1.7rem !important;
-  }
-
-  .VPHero .tagline {
-    font-size: 1rem !important;
-    padding: 0 1rem !important;
-  }
-
-  .VPHero {
-    padding: 20px 16px !important;
   }
 
   .VPFeatures .items .item {
