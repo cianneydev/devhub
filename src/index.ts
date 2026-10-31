@@ -8,6 +8,7 @@ import { registerExportCommand } from './commands/export.js';
 import { registerImportCommand } from './commands/import.js';
 import { registerCopyCommand } from './commands/copy.js';
 import { registerProjectCommands } from './commands/project.js';
+import { registerTaskCommands } from './commands/task.js';
 import { registerUiCommand } from './commands/ui.js';
 
 const program = new Command();
@@ -25,6 +26,7 @@ registerExportCommand(program);
 registerImportCommand(program);
 registerCopyCommand(program);
 registerProjectCommands(program);
+registerTaskCommands(program);
 registerUiCommand(program);
 
 program.parse(process.argv);
