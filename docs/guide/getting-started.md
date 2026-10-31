@@ -19,6 +19,10 @@ Un **CLI** (Command Line Interface) est une interface qui permet d'interagir ave
   </div>
 </div>
 
+<p align="center">
+  <img src="/cli-preview.png" alt="Aperçu de DevHub CLI" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.3); max-width: 100%;" />
+</p>
+
 DevHub est un CLI conçu pour centraliser vos outils de développeur.
 
 ## 📦 Prérequis
