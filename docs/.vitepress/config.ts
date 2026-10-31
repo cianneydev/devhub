@@ -51,6 +51,8 @@ export default defineConfig({
           { text: '📝 Snippets', link: '/guide/snippets' },
           { text: '📋 Copier', link: '/guide/copy' },
           { text: '📓 Notes', link: '/guide/notes' },
+          { text: '📊 Projets', link: '/guide/project' },
+          { text: '✅ Tâches', link: '/guide/task' },
           { text: '🔍 Recherche', link: '/guide/search' },
           { text: '⚡ Avancé', link: '/guide/advanced' },
           { text: '🖥️ Interface TUI', link: '/guide/ui' },
