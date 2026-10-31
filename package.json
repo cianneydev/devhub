@@ -1,6 +1,6 @@
 {
-  "name": "devhub - github",
-  "version": "0.7.1",
+  "name": "devhub-cli-cianneydev",
+  "version": "0.8.0",
   "description": "Le hub central du développeur moderne — CLI tout-en-un",
   "type": "module",
   "bin": {
