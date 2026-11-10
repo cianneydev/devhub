@@ -1,5 +1,5 @@
 /* ============================================
-   DEVHUB  -  Custom Theme (Dark & Light mode)
+   DEVHUB - Custom Theme (Dark & Light mode)
    ============================================ */
 
 /* Logo rond et propre */
@@ -21,7 +21,7 @@
 }
 
 /* ============================================
-   PAGE D'ACCUEIL - HERO (Cacher le logo géant)
+   PAGE D'ACCUEIL - HERO
    ============================================ */
 .VPHero .image,
 .VPHero .image-bg,
@@ -49,7 +49,7 @@
 }
 
 /* ============================================
-   CARTES DE FONCTIONNALITÉS (Compatible clair/sombre)
+   CARTES DE FONCTIONNALITÉS
    ============================================ */
 .VPFeatures .items .item {
   background: var(--vp-c-bg-soft) !important;
@@ -132,6 +132,70 @@
 .VPButton.brand:hover {
   filter: brightness(1.1) !important;
   transform: translateY(-2px) !important;
+}
+
+/* ============================================
+   FORMULAIRE DE CONTACT
+   ============================================ */
+.contact-container {
+  max-width: 600px;
+  margin: 2rem 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 16px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: var(--vp-c-text-1);
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 3px var(--vp-c-brand-soft);
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #8172ff, #6655e5);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 5px 20px rgba(118, 101, 255, 0.3);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
 }
 
 /* ============================================
