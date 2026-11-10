@@ -33,7 +33,7 @@ export default defineConfig({
       { text: 'Accueil', link: '/' },
       { text: 'Guide', link: '/guide/getting-started' },
       { text: 'Roadmap', link: '/guide/roadmap' },
-      { text: 'DevHub Web (bientôt)', link: '#' },
+      { text: 'Contact', link: '/contact' },
       { text: 'GitHub', link: 'https://github.com/cianneydev/devhub' },
     ],
 
