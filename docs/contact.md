@@ -28,4 +28,3 @@ Une question, une suggestion, ou envie de contribuer à DevHub ? Remplissez ce f
 ### 🔗 Autres moyens de me contacter
 
 - 💻 **GitHub** : [Ouvrir une issue](https://github.com/cianneydev/devhub/issues)
-- 📧 **Email** : [Votre adresse email]
