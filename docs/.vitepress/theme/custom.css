@@ -135,37 +135,105 @@
 }
 
 /* ============================================
-   FORMULAIRE DE CONTACT
+   NOUVELLE PAGE CONTACT (2 Colonnes)
    ============================================ */
-.contact-container {
-  max-width: 600px;
-  margin: 2rem 0;
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Colonne de gauche */
+.contact-info {
+  background: var(--vp-c-bg-soft);
+  padding: 3rem 2.5rem;
+}
+
+.contact-header {
+  margin-bottom: 2rem;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-header p {
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+
+.info-block {
+  margin-bottom: 1.5rem;
+}
+
+.info-block h3 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 0.5rem;
+}
+
+.info-block p {
+  font-size: 0.95rem;
+  color: var(--vp-c-text-1);
+  line-height: 1.6;
+}
+
+.info-block a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.info-block a:hover {
+  text-decoration: underline;
+}
+
+.social-links a {
+  display: inline-block;
+  padding: 8px 12px;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+/* Colonne de droite */
+.contact-form-wrapper {
+  background: var(--vp-c-bg);
+  padding: 3rem 2.5rem;
+}
+
+.contact-form-wrapper h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--vp-c-brand-1);
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-group label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
+  gap: 1rem;
 }
 
 .form-group input,
 .form-group textarea {
+  width: 100%;
   padding: 12px 16px;
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 0.95rem;
   color: var(--vp-c-text-1);
   font-family: inherit;
@@ -181,36 +249,22 @@
 }
 
 .submit-btn {
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #8172ff, #6655e5);
-  color: white;
+  padding: 14px 20px;
+  background: var(--vp-c-text-1);
+  color: var(--vp-c-bg);
   border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 700;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 5px 20px rgba(118, 101, 255, 0.3);
+  margin-top: 0.5rem;
 }
 
 .submit-btn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
-}
-
-/* ============================================
-   FOOTER - LIEN CONTACT
-   ============================================ */
-.VPFooter .message a {
-  color: var(--vp-c-brand-1);
-  font-weight: 600;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-.VPFooter .message a:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+  background: var(--vp-c-brand-1);
+  color: white;
 }
 
 /* ============================================
@@ -232,5 +286,15 @@
 
   .VPFeatures .items .item {
     padding: 18px !important;
+  }
+
+  /* Contact en 1 colonne sur mobile */
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-info,
+  .contact-form-wrapper {
+    padding: 2rem 1.5rem;
   }
 }
