@@ -199,6 +199,21 @@
 }
 
 /* ============================================
+   FOOTER - LIEN CONTACT
+   ============================================ */
+.VPFooter .message a {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.VPFooter .message a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ============================================
    MOBILE
    ============================================ */
 @media (max-width: 768px) {
