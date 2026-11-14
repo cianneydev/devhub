@@ -65,7 +65,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Publié sous licence MIT · CIANNEY LABS',
+      message: 'Publié sous licence MIT · <a href="/devhub/contact.html">Contact</a> · CIANNEY LABS',
       copyright: 'Copyright © 2026 cianneydev',
     },
 
