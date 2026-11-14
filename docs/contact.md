@@ -21,7 +21,7 @@
 </div>
 <div class="contact-form-wrapper">
 <h2>Formulaire de contact</h2>
-<form action="https://formspree.io/f/TON_ID_FORMSPREE" method="POST" class="contact-form">
+<form action="https://formspree.io/f/xoedjoov" method="POST" class="contact-form">
 <div class="form-group">
 <input type="text" name="name" placeholder="Votre nom" required>
 </div>
