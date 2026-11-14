@@ -23,13 +23,16 @@
 <h2>Formulaire de contact</h2>
 <form action="https://formspree.io/f/xoedjoov" method="POST" class="contact-form">
 <div class="form-group">
-<input type="text" name="name" placeholder="Votre nom" required>
+<label for="name">Votre nom</label>
+<input type="text" id="name" name="name" placeholder="Cianney" required>
 </div>
 <div class="form-group">
-<input type="email" name="email" placeholder="Votre adresse email" required>
+<label for="email">Votre email</label>
+<input type="email" id="email" name="email" placeholder="vous@exemple.com" required>
 </div>
 <div class="form-group">
-<textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
+<label for="message">Votre message</label>
+<textarea id="message" name="message" rows="5" placeholder="Dites-moi tout..." required></textarea>
 </div>
 <button type="submit" class="submit-btn">ENVOYER LE MESSAGE</button>
 </form>
